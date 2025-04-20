@@ -8,14 +8,14 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import { BarraInicio } from "../components/BarraInicio";
 
-const ACCESS_TOKEN = import.meta.env.ACCESS_TOKEN;
+const ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN;
 
 const options = {
   method: "GET",
   headers: {
     accept: "application/json",
     Authorization:
-      `Bearer ${ACCESS_TOKEN}`,
+      'Bearer ' + ACCESS_TOKEN,
   },
 };
 

@@ -4,7 +4,7 @@ import axios from "axios";
 import Container from "react-bootstrap/esm/Container";
 import { BarraInicio } from "../components/BarraInicio";
 
-const API_KEY = import.meta.env.API_KEY;
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 export default function Search() {
   const [results, setResults] = useState([]);
@@ -18,7 +18,7 @@ export default function Search() {
       if (!query) return;
       try {
         const res = await axios.get(
-          `https://api.themoviedb.org/3/search/movie?api_key=4d53c57540ce374357a8420e9ea74436&query=${query}`
+          `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`
         );
         setResults(res.data.results);
       } catch (err) {

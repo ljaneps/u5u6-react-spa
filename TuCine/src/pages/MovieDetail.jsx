@@ -9,7 +9,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const API_KEY = import.meta.env.API_KEY;
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 export default function MovieDetail() {
   const { id } = useParams();
@@ -19,7 +19,7 @@ export default function MovieDetail() {
     const getMovie = async () => {
       try {
         const res = await axios.get(
-          `https://api.themoviedb.org/3/movie/${id}?api_key=4d53c57540ce374357a8420e9ea74436&language=es-ES`
+          `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=es-ES`
         );
         setMovie(res.data);
       } catch (err) {
